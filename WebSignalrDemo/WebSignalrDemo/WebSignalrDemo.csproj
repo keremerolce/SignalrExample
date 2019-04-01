@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
@@ -132,6 +133,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
