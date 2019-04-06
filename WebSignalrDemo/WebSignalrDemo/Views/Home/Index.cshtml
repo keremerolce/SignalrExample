@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebSignalrDemo.Models.User>
 @{
     Layout = null;
 }
@@ -10,17 +10,26 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <style>
-        .other{
-            color:blue;
+        .other {
+            color: blue;
         }
-        .caller{
-            color:green;
+
+        .caller {
+            color: green;
         }
     </style>
 </head>
 <body>
-    <h1 id="titleName"></h1>
-<input type="text" id="txtMessage"/>
+    <h1 id="titleName">Hoşgeldiniz @Session["username"]</h1>
+    @foreach (var item in Model)
+    {
+        <ul class="list-unstyled">
+            <li>
+                @item.Username
+            </li>
+        </ul>
+    }
+    <input type="text" id="txtMessage" />
     <br />
     <button id="btnSend"> Send Message</button>
     <hr />
@@ -34,8 +43,9 @@
 
 <script>
     $(document).ready(function () {
-        var name = prompt("Kullanıcı Adınızı Giriniz:");
-        $("#titleName").html("Hoşgeldiniz " + name);
+        var name=@Session["username"];
+        //var name = Session["username"];
+        //$("#titleName").html("Hoşgeldiniz " + name);
 
         $.connection.hub.start();
         var chat = $.connection.chatHub;

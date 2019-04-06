@@ -126,3 +126,7 @@ E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\obj\Debug\WebSignalrDem
 E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\obj\Debug\WebSignalrDemo.csproj.CopyComplete
 E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\obj\Debug\WebSignalrDemo.dll
 E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\obj\Debug\WebSignalrDemo.pdb
+E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\bin\EntityFramework.dll
+E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\bin\EntityFramework.SqlServer.dll
+E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\bin\EntityFramework.xml
+E:\MyGitHub\SignalrExample\WebSignalrDemo\WebSignalrDemo\bin\EntityFramework.SqlServer.xml
