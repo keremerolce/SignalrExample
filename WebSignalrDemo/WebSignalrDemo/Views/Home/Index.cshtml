@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<WebSignalrDemo.Models.User>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -20,21 +20,14 @@
     </style>
 </head>
 <body>
-    <h1 id="titleName">Hoşgeldiniz @Session["username"]</h1>
-    @foreach (var item in Model)
-    {
-        <ul class="list-unstyled">
-            <li>
-                @item.Username
-            </li>
-        </ul>
-    }
-    <input type="text" id="txtMessage" />
-    <br />
-    <button id="btnSend"> Send Message</button>
-    <hr />
-    <ul id="chatList"></ul>
-
+    <div class="col-md-4">
+        <h1 id="titleName">Hoşgeldiniz @Session["username"]</h1>
+        <input type="text" id="txtMessage" />
+        <br />
+        <button id="btnSend"> Send Message</button>
+        <hr />
+        <ul id="chatList"></ul>
+    </div>
     <script src="~/Scripts/jquery-1.6.4.js"></script>
     <script src="~/Scripts/jquery.signalR-2.4.0.js"></script>
     <script src="/signalr/hubs"></script>

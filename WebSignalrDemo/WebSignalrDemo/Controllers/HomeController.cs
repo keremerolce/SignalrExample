@@ -40,11 +40,14 @@ namespace WebSignalrDemo.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Singin(User user)
+        public ActionResult Singin(User user,UserGroup userGroup)
         {
             if (ModelState.IsValid)
             {
+                userGroup.UserId = user.UserId;
+                userGroup.GroupId = 1;
                 db.Users.Add(user);
+                db.UserGroups.Add(userGroup);
                 db.SaveChanges();
                 Session["username"] = user.Username;
                 Session["password"] = user.Password;
@@ -57,6 +60,10 @@ namespace WebSignalrDemo.Controllers
         public ActionResult UsernameList()
         {
             return View(db.Users.ToList());
+        }
+        public ActionResult deneme()
+        {
+            return View();
         }
     }
 }
