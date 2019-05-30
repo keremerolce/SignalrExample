@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="col-md-4">
-        <h1 id="titleName">Hoşgeldiniz @Session["username"]</h1>
+        <h1 id="titleName"></h1>
         <input type="text" id="txtMessage" />
         <br />
         <button id="btnSend"> Send Message</button>
@@ -37,10 +37,14 @@
 <script>
     $(document).ready(function () {
         var name=@Session["username"];
-        //var name = Session["username"];
-        //$("#titleName").html("Hoşgeldiniz " + name);
-
+        $("#titleName").html("Hoşgeldiniz " + name);
         $.connection.hub.start();
+        var chat = $.connection.chatHub;
+        $("#btnSend").click(function () {
+            var message = $("#txtMessage").val();
+            chat.server.SendMessage(name, message);
+        });
+        /*$.connection.hub.start();
         var chat = $.connection.chatHub;
 
         chat.client.GetMessageOther = function (name,message) {
@@ -53,6 +57,6 @@
         $("#btnSend").click(function () {
             var message = $("#txtMessage").val();
             chat.server.sendMessage(name, message);
-        })
+        })*/
     });
 </script>
